@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mymikemiller.skeleton;
+package com.mymikemiller.onetwothree;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
@@ -30,14 +30,14 @@ import android.util.Log;
  * @author wolff
  * 
  */
-public class SkeletonTurn {
+public class OneTwoThreeTurn {
 
     public static final String TAG = "EBTurn";
 
     public String data = "";
     public int turnCounter;
 
-    public SkeletonTurn() {
+    public OneTwoThreeTurn() {
     }
 
     // This is the byte array we will write out to the TBMP API.
@@ -60,12 +60,12 @@ public class SkeletonTurn {
         return st.getBytes(Charset.forName("UTF-8"));
     }
 
-    // Creates a new instance of SkeletonTurn.
-    static public SkeletonTurn unpersist(byte[] byteArray) {
+    // Creates a new instance of OneTwoThreeTurn.
+    static public OneTwoThreeTurn unpersist(byte[] byteArray) {
 
         if (byteArray == null) {
             Log.d(TAG, "Empty array---possible bug.");
-            return new SkeletonTurn();
+            return new OneTwoThreeTurn();
         }
 
         String st = null;
@@ -78,7 +78,7 @@ public class SkeletonTurn {
 
         Log.d(TAG, "====UNPERSIST \n" + st);
 
-        SkeletonTurn retVal = new SkeletonTurn();
+        OneTwoThreeTurn retVal = new OneTwoThreeTurn();
 
         try {
             JSONObject obj = new JSONObject(st);

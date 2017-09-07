@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.mymikemiller.skeleton;
+package com.mymikemiller.onetwothree;
 
 import android.app.Activity;
 import android.app.AlertDialog;
@@ -61,12 +61,12 @@ import java.util.ArrayList;
  *
  * @author Wolff (wolff@google.com), 2013
  */
-public class SkeletonActivity extends Activity
+public class OneTwoThreeActivity extends Activity
         implements GoogleApiClient.ConnectionCallbacks, GoogleApiClient.OnConnectionFailedListener,
         OnInvitationReceivedListener, OnTurnBasedMatchUpdateReceivedListener,
         View.OnClickListener {
 
-    public static final String TAG = "SkeletonActivity";
+    public static final String TAG = "OneTwoThreeActivity";
 
     // Client used to interact with Google APIs
     private GoogleApiClient mGoogleApiClient;
@@ -103,7 +103,7 @@ public class SkeletonActivity extends Activity
     // This is the current match data after being unpersisted.
     // Do not retain references to match data once you have
     // taken an action on the match, such as takeTurn()
-    public SkeletonTurn mTurnData;
+    public OneTwoThreeTurn mTurnData;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -492,7 +492,7 @@ public class SkeletonActivity extends Activity
     // callback to OnTurnBasedMatchUpdated(), which will show the game
     // UI.
     public void startMatch(TurnBasedMatch match) {
-        mTurnData = new SkeletonTurn();
+        mTurnData = new OneTwoThreeTurn();
         // Some basic turn data
         mTurnData.data = "First turn";
 
@@ -600,7 +600,7 @@ public class SkeletonActivity extends Activity
         // OK, it's active. Check on turn status.
         switch (turnStatus) {
             case TurnBasedMatch.MATCH_TURN_STATUS_MY_TURN:
-                mTurnData = SkeletonTurn.unpersist(mMatch.getData());
+                mTurnData = OneTwoThreeTurn.unpersist(mMatch.getData());
                 setGameplayUI();
                 return;
             case TurnBasedMatch.MATCH_TURN_STATUS_THEIR_TURN:
