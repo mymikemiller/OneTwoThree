@@ -86,6 +86,7 @@ public class OneTwoThreeActivity extends Activity
     // Local convenience pointers
     public TextView mDataView;
     public TextView mTurnTextView;
+    public TextView mOtherPlayerGuessTextView;
 
     private AlertDialog mAlertDialog;
 
@@ -123,6 +124,7 @@ public class OneTwoThreeActivity extends Activity
 
         mDataView = ((TextView) findViewById(R.id.data_view));
         mTurnTextView = ((TextView) findViewById(R.id.turn_counter_view));
+        mOtherPlayerGuessTextView = ((TextView) findViewById(R.id.other_player_guess_view));
     }
 
     @Override
@@ -298,7 +300,8 @@ public class OneTwoThreeActivity extends Activity
         String nextParticipantId = getNextParticipantId();
         // Create the next turn
         mTurnData.turnCounter += 1;
-        mTurnData.data = mDataView.getText().toString();
+        mTurnData.guess = mDataView.getText().toString();
+
 
         showSpinner();
 
@@ -350,8 +353,8 @@ public class OneTwoThreeActivity extends Activity
     public void setGameplayUI() {
         isDoingTurn = true;
         setViewVisibility();
-        mDataView.setText(mTurnData.data);
         mTurnTextView.setText("Turn " + mTurnData.turnCounter);
+        mOtherPlayerGuessTextView.setText("Other player's guess: " + mTurnData.guess);
     }
 
     // Helpful dialogs
@@ -494,7 +497,7 @@ public class OneTwoThreeActivity extends Activity
     public void startMatch(TurnBasedMatch match) {
         mTurnData = new OneTwoThreeTurn();
         // Some basic turn data
-        mTurnData.data = "First turn";
+        mTurnData.guess = "";
 
         mMatch = match;
 

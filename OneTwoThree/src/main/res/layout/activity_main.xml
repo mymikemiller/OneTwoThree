@@ -66,6 +66,15 @@
             android:textAppearance="@style/GuessWordText"
             android:width="300dp" />
 
+        <TextView
+            android:id="@+id/other_player_guess_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="@string/turn_counter"
+            android:textAppearance="@style/GuessWordText"
+            android:width="300dp" />
+
         <EditText
             android:id="@+id/data_view"
             android:layout_width="match_parent"

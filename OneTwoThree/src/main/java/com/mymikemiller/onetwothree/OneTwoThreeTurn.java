@@ -34,8 +34,8 @@ public class OneTwoThreeTurn {
 
     public static final String TAG = "EBTurn";
 
-    public String data = "";
     public int turnCounter;
+    public String guess = "";
 
     public OneTwoThreeTurn() {
     }
@@ -45,7 +45,7 @@ public class OneTwoThreeTurn {
         JSONObject retVal = new JSONObject();
 
         try {
-            retVal.put("data", data);
+            retVal.put("guess", guess);
             retVal.put("turnCounter", turnCounter);
 
         } catch (JSONException e) {
@@ -83,8 +83,8 @@ public class OneTwoThreeTurn {
         try {
             JSONObject obj = new JSONObject(st);
 
-            if (obj.has("data")) {
-                retVal.data = obj.getString("data");
+            if (obj.has("guess")) {
+                retVal.guess = obj.getString("guess");
             }
             if (obj.has("turnCounter")) {
                 retVal.turnCounter = obj.getInt("turnCounter");
