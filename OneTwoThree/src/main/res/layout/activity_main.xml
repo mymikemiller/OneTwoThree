@@ -76,7 +76,7 @@
             android:width="300dp" />
 
         <EditText
-            android:id="@+id/data_view"
+            android:id="@+id/guess_view"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -85,14 +85,14 @@
             android:gravity="center"
             android:inputType="textEmailAddress|textEmailSubject"
             android:maxLines="1"
-            android:text="@string/hello_world"
+            android:text=""
             android:textAppearance="@style/GuessWordText" />
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:orientation="horizontal" >
+            android:orientation="vertical" >
 
             <Button
                 android:id="@+id/doneButton"

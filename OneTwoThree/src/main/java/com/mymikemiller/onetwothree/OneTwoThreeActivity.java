@@ -84,7 +84,7 @@ public class OneTwoThreeActivity extends Activity
     private TurnBasedMatch mTurnBasedMatch;
 
     // Local convenience pointers
-    public TextView mDataView;
+    public TextView mGuessView;
     public TextView mTurnTextView;
     public TextView mOtherPlayerGuessTextView;
 
@@ -122,7 +122,7 @@ public class OneTwoThreeActivity extends Activity
         findViewById(R.id.sign_out_button).setOnClickListener(this);
         findViewById(R.id.sign_in_button).setOnClickListener(this);
 
-        mDataView = ((TextView) findViewById(R.id.data_view));
+        mGuessView = ((TextView) findViewById(R.id.guess_view));
         mTurnTextView = ((TextView) findViewById(R.id.turn_counter_view));
         mOtherPlayerGuessTextView = ((TextView) findViewById(R.id.other_player_guess_view));
     }
@@ -300,7 +300,10 @@ public class OneTwoThreeActivity extends Activity
         String nextParticipantId = getNextParticipantId();
         // Create the next turn
         mTurnData.turnCounter += 1;
-        mTurnData.guess = mDataView.getText().toString();
+        mTurnData.guess = mGuessView.getText().toString();
+
+        // Reset the edit text
+        mGuessView.setText("");
 
 
         showSpinner();
